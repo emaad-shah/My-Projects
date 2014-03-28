@@ -1,0 +1,11 @@
+C 5678 F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974
+C 5678 P Communications of the ACM, 3 2001
+R 5678 P Communications of the ACM, 3 2001
+C 1234 P Communications of the ACM, 3 2001
+C 5585 F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974
+C 5678 S Pirsig Robert, Zen & the art of Motorcycle Maint, 1974
+C 5678 P Some Periodical, 2 2005
+G 5678 P Some Periodical, 2 2005
+R 5678 F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974
+R 999 F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974 
+R 10000 F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974 

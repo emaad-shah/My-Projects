@@ -1,0 +1,6 @@
+F Pirsig Robert, Zen & the art of Motorcycle Maint, 1974
+P Communications of the ACM, 3 2001
+P Communications of the ACM, 1 2004
+C E.B.White, Charlotte's Web, 1952
+Z Blah blah of the ACM, 12 9999
+C Eric Carle, The Very Hungry Caterpillar, 1969

@@ -6,7 +6,6 @@
 // (2) Return
 //------------------------------------------------------------
 
-
 #include <iostream>
 #include <istream>
 #include <fstream>
@@ -23,13 +22,15 @@ class Transaction
 	public:
 		Transaction()
 		{
-
 		}
+
 		// Execute transaction
-		virtual bool execute(Book*&, list<string> &) = 0;
+		virtual bool execute(Book *&, list<string> &) = 0;
 		
 	protected:
+		// Book record
 		Book* book;
+		// Stores customer transaction
 		string transaction;
 };
 

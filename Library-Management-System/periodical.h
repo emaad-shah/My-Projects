@@ -1,5 +1,8 @@
 //------------------------------------------------------------
 // Sub-Class of Book
+// (1) Adding a Periodical in to the inventory
+// (2) Comparing one Periodical to another
+// (2) Displaying it's content
 //------------------------------------------------------------
 
 #include "book.h"
@@ -11,7 +14,7 @@ class Periodical: public Book
 	public:
 		// Set Quantity of Periodical Book
 		Periodical();
-		// Add a book in the library
+		// Add a periodical book in the inventory
 		Book* create(ifstream&);
 		// Display type of Book
 		void displayType()const;
@@ -19,6 +22,8 @@ class Periodical: public Book
 		void displayBook()const;
 		// Compare Periodical
 		bool operator==(Book *)const;
+		bool operator<=(Book *)const;
+		// Retrieve periodical information to store transaction
 		string getBook();
 
 	private:

@@ -1,5 +1,6 @@
 //------------------------------------------------------------
-// Sub-Class of Transaction
+// Sub-Class of Transaction. Responsible for:
+// (1) Checking out (Issuing) a book
 //------------------------------------------------------------
 
 #include "transaction.h"

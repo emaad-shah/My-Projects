@@ -18,6 +18,7 @@ void Library::initialize()
 {
 	// Creating customer class array
 	c = new His[MAXCUSTOMERS];
+	// Initialize customer
 	for (int i = 0; i < MAXCUSTOMERS; i++)
 	{
 		for (int j = 0; j < 2; j++)
@@ -26,9 +27,9 @@ void Library::initialize()
 		c[i].t[1] = new Return();
 	}
 
+	// Initialize inventory
 	for (int i = 0; i < 3; i++)
 		inventory[i] = NULL;
-	
 	inventory[0] = new Children();
 	inventory[1] = new Fiction();
 	inventory[2] = new Periodical();
@@ -37,8 +38,10 @@ void Library::initialize()
 // Library deconstructor
 Library::~Library()
 {
+	// Delete Inventory
 	for (int i = 0; i < 3; i++)
 		delete inventory[i];
+	// Delete customer transaction
 	for (int i = 0; i < MAXCUSTOMERS; i++)
 	{
 		delete c[i].t[0];
@@ -146,6 +149,7 @@ void Library::performTransaction()
 				if (h.validType(key))
 				{
 					inventory[key] = inventory[key]->create(file3);
+					// Check if the book exists in the inventory
 					bool retrieve = bookList[key].retrieve(inventory[key]);
 					if (retrieve)
 						c[id].t[transKey]->execute(inventory[key], c[id].tList);
@@ -176,6 +180,7 @@ void Library::displayInventory(const char & type)
 			bookList[key].print();
 	}
 	else
+		// Invalid entry
 		cerr << "Invalid Book Type: " << type << endl;
 	cout << endl;
 }

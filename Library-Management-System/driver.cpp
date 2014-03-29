@@ -1,5 +1,5 @@
 //------------------------------------------------------------
-// Copyright: Syed Shah 2014
+// Copyright: Syed Emaad Shah 2014 
 // Compiler: Visual Studio Express 2013
 // 
 // This program contains the implementation for a library
@@ -11,17 +11,25 @@
 // (4) View Transaction History
 //
 // Three types of books are stores in the inventory:
-// (1) Fiction: Sorted by Author, Title and Year
-// (2) Children: Sorted by Author, Title and Year
-// (3) Periodical: Sorted by Title, Year and Month
+// (1) Fiction: Contains Author, Title and Year
+// (2) Children: Contains Author, Title and Year
+// (3) Periodical: Contains Title, Year and Month
 //
 // Implementation: The program adheres to the standards
-// described by the open-closed design system. Customer 
-// information is stored in a hash table for a quick 
-// retrieval. 
+// described by the open-closed design system. 
+// (1) Customer information is stored in a hash table 
+//     for a quick retrieval using a unique 4 digit ID
+// (2) Books are stored in a linked list as:
+//	   Children:   C1->C2->C3->NULL
+//     Fiction:    F1->F2->F3->NULL 
+//     Periodical: P1->P2->P3->NULL
+// (3) The book class is polymorphic in behaviour
 //
-// Assumptions: The program reads customer, book and 
-// transaction information from a text file
+// Limitations: 
+// (1) The program reads customer, book and transaction 
+//     information from a text file
+// (2) The program can be made interactive by minimal
+//     modificiation
 //------------------------------------------------------------
 #include "library.h"
 

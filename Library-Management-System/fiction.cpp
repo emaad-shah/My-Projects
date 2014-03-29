@@ -5,16 +5,19 @@ Fiction::Fiction()
 
 }
 
-// Add a book in the library
-Book* Fiction::create(ifstream& file)
+// Add a fiction book in the inventory
+Book* Fiction::create(ifstream & file)
 {
-	Fiction* temp = new Fiction();
-	getline(file, temp->author, ',');
+	Fiction* f = new Fiction();
+	// Read book author
+	getline(file, f->author, ',');
 	file.get();
-	getline(file, temp->title, ',');
+	// Read book title
+	getline(file, f->title, ',');
 	file.get();
-	file >> temp->year;
-	return temp;
+	// Read book year
+	file >> f->year;
+	return f;
 }
 
 // Display type of Book
@@ -26,10 +29,12 @@ void Fiction::displayType()const
 // Display contents of the book
 void Fiction::displayBook()const
 {
-	cout << author << ", " << title << ", " << year << endl;
+	cout << author << ", " << title << ", " 
+		 << year << " (Quantity: " 
+		 << quantity << ")" << endl;
 }
 
-// Compare Fiction
+// Compare Fiction Book
 bool Fiction::operator==(Book * b)const
 {
 	// Compare the author, title and the year
@@ -39,8 +44,17 @@ bool Fiction::operator==(Book * b)const
 		this->year == f->year;
 }
 
+// Compare Fiction Book
+bool Fiction::operator<=(Book * b)const
+{
+	// Compare book title
+	Fiction* f = dynamic_cast<Fiction*>(b);
+	return this->title <= f->title;
+}
+
+// Retrieve book information to store transaction
 string Fiction::getBook()
 {
-	return "Fiction- " + author + ", "
+	return "Fiction - " + author + ", "
 		+ title + ", " + to_string(year);
 }

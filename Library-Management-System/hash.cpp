@@ -4,7 +4,7 @@
 Hash::Hash()
 {
 	// Initialize Hash Map
-	for (char i = 65; i <= 90; i++)
+	for (char i = 0; i <= 126; i++)
 		key[i] = -1;
 	// Children Book or Check Out
 	key['C'] = 0;

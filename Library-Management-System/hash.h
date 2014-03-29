@@ -1,5 +1,12 @@
 //------------------------------------------------------------
-// The following class contains methods for a Hash Table
+// The following class contains Hash functions for:
+// (1) Book Inventory         
+//     0 = Children
+//     1 = Fiction
+//     2 = Periodical
+// (2) Customer Transaction
+//     0 = CheckOut
+//     1 = Return
 //------------------------------------------------------------
 
 #include <iostream>

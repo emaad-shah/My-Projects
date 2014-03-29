@@ -21,7 +21,15 @@ void List::insert(Book* data)
 // Helper Function for Insert
 void List::insertHelper(Node *& head, Book* data)
 {
-	if (head == NULL)
+	// If the Book already exists 
+	if (head != NULL && *head->data == data)
+	{
+		// Increase quantity
+		head->data->increaseQuantity();
+		return;
+	}
+
+	else if (head == NULL || *data <= head->data)
 	{
 		Node* newNode = new Node;
 		newNode->data = data;
@@ -72,7 +80,7 @@ bool List::isEmpty()
 	return head == NULL;
 }
 
-// Retrieve Book
+// Retrieve a Book
 bool List::retrieve(Book *& b)const
 {
 	Node* cur = head;

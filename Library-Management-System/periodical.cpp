@@ -3,18 +3,22 @@
 // Set Quantity of Periodical Book
 Periodical::Periodical()
 {
+	// By default, there is 1 copy of a Periodical
 	quantity = 1;
 }
 
-// Add a book in the library
-Book* Periodical::create(ifstream& file)
+// Add a periodical book in the inventory
+Book* Periodical::create(ifstream & file)
 {
-	Periodical * temp = new Periodical();
-	getline(file, temp->title, ',');
+	Periodical * p = new Periodical();
+	// Read periodical title
+	getline(file, p->title, ',');
 	file.get();
-	file >> temp->month;
-	file >> temp->year;
-	return temp;
+	// Read periodical month
+	file >> p->month;
+	// Read periodical year
+	file >> p->year;
+	return p;
 }
 
 // Display type of Book
@@ -26,7 +30,8 @@ void Periodical::displayType()const
 // Display contents of the book
 void Periodical::displayBook()const
 {
-	cout << title << ", " << year << " " << month << endl;
+	cout << title << ", " << year << " " << month 
+		 << " (Quantity: " << quantity << ")" << endl;
 }
 
 // Compare Periodical
@@ -39,8 +44,17 @@ bool Periodical::operator==(Book * b)const
 		this->year == p->year;
 }
 
+// Compare Periodical
+bool Periodical::operator<=(Book * b)const
+{
+	// Compare book title
+	Periodical* p = dynamic_cast<Periodical*>(b);
+	return this->title <= p->title;
+}
+
+// Retrieve periodical information to store transaction
 string Periodical::getBook()
 {
-	return "Periodical- " + title + ", " +
+	return "Periodical - " + title + ", " +
 		to_string(month) + ", " + to_string(year);
 }

@@ -2,9 +2,9 @@
 // The following abstract class contains the method 
 // declaration for the library books. 
 // The following classes are inherited from the Book class:
-// (1) Fiction
-// (2) Children
-// (3) Periodical
+// (1) Fiction (Author, Title, Year)
+// (2) Children (Author, Title, Year)
+// (3) Periodical (Title, Month, Year)
 //------------------------------------------------------------
 
 #include <iostream>
@@ -26,9 +26,12 @@ class Book
 		void returnBook();
 		// Check Out a Book
 		bool checkBook();
-		// Return the quantity of a book
+		// Increase quantity of a Book if the
+		// library receives additional copies
+		void increaseQuantity();
+		// Get the quantity of a book
 		int getQuantity()const;
-		// Add a book in the library
+		// Add a new book in the inventory
 		virtual Book * create(ifstream &) = 0;
 		// Display type of Book
 		virtual void displayType()const = 0;
@@ -36,6 +39,8 @@ class Book
 		virtual void displayBook()const = 0;
 		// Compare book
 		virtual bool operator==(Book*)const = 0;
+		virtual bool operator<=(Book*)const = 0;
+		// Retrieve book information to store transaction
 		virtual string getBook() = 0;
 
 	protected:

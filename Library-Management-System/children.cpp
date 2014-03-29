@@ -5,16 +5,19 @@ Children::Children()
 
 }
 
-// Add a book in the library
-Book* Children::create(ifstream& file)
+// Add a children book in the inventory
+Book* Children::create(ifstream & file)
 {
-	Children* temp = new Children();
-	getline(file, temp->author, ',');
+	Children* c = new Children();
+	// Read book author
+	getline(file, c->author, ',');
 	file.get();
-	getline(file, temp->title, ',');
+	// Read book title
+	getline(file, c->title, ',');
 	file.get();
-	file >> temp->year;
-	return temp;
+	// Read book year
+	file >> c->year;
+	return c;
 }
 
 // Display type of Book
@@ -26,10 +29,12 @@ void Children::displayType()const
 // Display contents of the book
 void Children::displayBook()const
 {
-	cout << author << ", " << title << ", " << year << endl;
+	cout << author << ", " << title << ", "
+		<< year << " (Quantity: "
+		<< quantity << ")" << endl;
 }
 
-// Compare Children
+// Compare Children Book
 bool Children::operator==(Book * b)const
 {
 	// Compare the author, title and the year
@@ -39,9 +44,18 @@ bool Children::operator==(Book * b)const
 		this->year == c->year;
 }
 
+// Compare Children Book
+bool Children::operator<=(Book * b)const
+{
+	// Compare book title
+	Children* c = dynamic_cast<Children*>(b);
+	return this->title <= c->title;
+}
+
+// Retrieve book information to store transaction
 string Children::getBook()
 {
-	return "Children- " + author + ", "
+	return "Children - " + author + ", "
 		+ title + ", " + to_string(year);
 }
 

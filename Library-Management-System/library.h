@@ -8,7 +8,7 @@
 // (4) Display Inventory
 // (5) View Transaction History
 //
-// Limitations: The customer must have a unique 4 digit ID 
+// Assumptions: The customer must have a unique 4 digit ID 
 //------------------------------------------------------------
 
 #include <iostream>

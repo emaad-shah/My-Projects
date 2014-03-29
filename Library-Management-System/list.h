@@ -29,7 +29,7 @@ class List
 		void free();
 		// Checks if the list is empty
 		bool isEmpty();
-		// Retrieve Book
+		// Retrieve a Book
 		bool retrieve(Book *&)const;
 
 	private:

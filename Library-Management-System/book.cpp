@@ -3,11 +3,19 @@
 // Set Quantity of Fiction and Children Book
 Book::Book()
 {
+	// By default, there are 5 copies of a Fiction Book
 	quantity = 5;
 }
 
 // Return a book
 void Book::returnBook()
+{
+	quantity++;
+}
+
+// Increase quantity of a Book if the
+// library receives additional copies
+void Book::increaseQuantity()
 {
 	quantity++;
 }

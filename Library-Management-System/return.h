@@ -1,5 +1,6 @@
 //------------------------------------------------------------
-// Sub-Class of Transaction
+// Sub-Class of Transaction. Responsible for:
+// (1) Returning and adding a book back in to the inventory
 //------------------------------------------------------------
 
 #include "transaction.h"

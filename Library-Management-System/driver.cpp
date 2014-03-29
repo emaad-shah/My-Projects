@@ -20,7 +20,7 @@
 // (1) Customer information is stored in a hash table 
 //     for a quick retrieval using a unique 4 digit ID
 // (2) Books are stored in a linked list as:
-//	   Children:   C1->C2->C3->NULL
+//     Children:   C1->C2->C3->NULL
 //     Fiction:    F1->F2->F3->NULL 
 //     Periodical: P1->P2->P3->NULL
 // (3) The book class is polymorphic in behaviour
